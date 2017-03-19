@@ -21,3 +21,4 @@
   Pick ups  
   Special abilities  
   Different tanks  
+  Footsoldiers  
