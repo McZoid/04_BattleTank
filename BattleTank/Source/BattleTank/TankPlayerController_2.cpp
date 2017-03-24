@@ -38,8 +38,7 @@ void ATankPlayerController_2::AimTowardsCrosshair()
 	FVector HitLocation; //Out parameter
 	if (GetSightRayHitLocation(HitLocation)) //if hit landscape
 	{
-		UE_LOG(LogTemp, Error, TEXT("Hitlocation: %s"), *HitLocation.ToString());
-			//TODO move turret to raytrace intersect
+		GetControlledTank()->AimAt(HitLocation);
 	}
 }
 
@@ -72,6 +71,7 @@ bool ATankPlayerController_2::GetLookVectorHitLocation(FVector LookDirection, FV
 	FHitResult HitResult;
 	auto StartLocation = PlayerCameraManager->GetCameraLocation();
 	auto EndLocation = StartLocation + LookDirection*LineTraceRange;
+	//DrawDebugLine(GetWorld(), StartLocation, EndLocation, FColor(255, 0, 0), false, -1, 0, 12.333);
 	if (GetWorld()->LineTraceSingleByChannel(
 		HitResult,
 		StartLocation,
