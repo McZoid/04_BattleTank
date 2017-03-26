@@ -2,10 +2,7 @@
 
 #include "BattleTank.h"
 #include "Tank.h"
-#include "..\Public\Tank.h"
-
-
-
+//#include "..\Public\Tank.h"
 
 // Sets default values
 ATank::ATank()
